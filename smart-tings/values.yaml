@@ -1,0 +1,4 @@
+
+home-assistant:
+  configurator:
+    enabled: true
