@@ -1,9 +1,7 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: "{{ include "smarttings.fullname" . }}-test-connection"
-  labels:
-    {{- include "smarttings.labels" . | nindent 4 }}
+  name: "smart-tings-test-connection"
   annotations:
     "helm.sh/hook": test-success
 spec:
@@ -11,5 +9,5 @@ spec:
     - name: wget
       image: busybox
       command: ['wget']
-      args: ['{{ include "smarttings.fullname" . }}:{{ 8123 }}']
+      args: ['{{ .Release.Name }}-home-assistant:8123']
   restartPolicy: Never

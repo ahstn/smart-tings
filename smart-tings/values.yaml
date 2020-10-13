@@ -2,3 +2,15 @@
 home-assistant:
   configurator:
     enabled: true
+  service:
+    type: NodePort
+  persistence: 
+    enabled: false
+  configmap:
+    enabled: true
+    name: ha-core
+  
+  # extraVolumes:
+  # - name: config
+  #   configMap:
+  #     name: ha-core

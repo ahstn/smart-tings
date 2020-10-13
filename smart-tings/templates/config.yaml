@@ -1,0 +1,35 @@
+# Source: mychart/templates/configmap.yaml
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: ha-core
+data:
+  configuration.yaml: |-
+    default_config:
+
+    tts:
+      - platform: google_translate
+      
+    zha:
+      zigpy_config:
+        ota:
+          ikea_provider: true
+
+    device_tracker: 
+    - platform: asuswrt
+      host: 192.168.1.1
+      username: admin
+      password: !secret router_password
+      new_device_defaults:
+        track_new_devices: true
+
+    asuswrt:
+      host: 192.168.1.1
+      username: admin
+      password: !secret router_password
+      sensors:
+        - devices
+        - upload
+        - download
+        - upload_speed
+        - download_speed
