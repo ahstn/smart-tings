@@ -38,6 +38,10 @@ asuswrt:
     - upload_speed
     - download_speed
 
+fastdotcom:
+  scan_interval:
+      minutes: 30
+
 zha:
   zigpy_config:
     ota:
