@@ -19,6 +19,14 @@ media_player:
   host: 192.168.1.151
   screencap: false
 
+sensor:
+- platform: systemmonitor
+  resources:
+  - type: processor_use
+  - type: memory_use
+  - type: disk_use
+    arg: '/'  
+      
 asuswrt:
   host: 192.168.1.1
   username: !secret router_username
