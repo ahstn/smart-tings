@@ -1,0 +1,6 @@
+# Helm
+*/Chart.lock
+*/charts
+
+# HA
+crypt.yaml
