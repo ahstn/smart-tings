@@ -2,14 +2,8 @@
 # Configure a default setup of Home Assistant (frontend, api, etc)
 default_config:
 
-# Text to speech
 tts:
   - platform: google_translate
-  
-zha:
-  zigpy_config:
-    ota:
-      ikea_provider: true
 
 device_tracker: 
 - platform: asuswrt
@@ -18,6 +12,12 @@ device_tracker:
   password: !secret router_password
   new_device_defaults:
     track_new_devices: true
+
+media_player:
+- platform: androidtv
+  name: "Adam's Fire TV"
+  host: 192.168.1.151
+  screencap: false
 
 asuswrt:
   host: 192.168.1.1
@@ -29,3 +29,8 @@ asuswrt:
     - download
     - upload_speed
     - download_speed
+
+zha:
+  zigpy_config:
+    ota:
+      ikea_provider: true
