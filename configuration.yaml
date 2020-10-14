@@ -1,0 +1,31 @@
+
+# Configure a default setup of Home Assistant (frontend, api, etc)
+default_config:
+
+# Text to speech
+tts:
+  - platform: google_translate
+  
+zha:
+  zigpy_config:
+    ota:
+      ikea_provider: true
+
+device_tracker: 
+- platform: asuswrt
+  host: 192.168.1.1
+  username: !secret router_username
+  password: !secret router_password
+  new_device_defaults:
+    track_new_devices: true
+
+asuswrt:
+  host: 192.168.1.1
+  username: !secret router_username
+  password: !secret router_password
+  sensors:
+    - devices
+    - upload
+    - download
+    - upload_speed
+    - download_speed
