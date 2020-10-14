@@ -6,9 +6,9 @@ home-assistant:
     type: NodePort
   persistence: 
     enabled: false
-  configmap:
+  git:
     enabled: true
-    name: ha-core
+    repo: https://github.com/ahstn/smart-tings.git
   
   # extraVolumes:
   # - name: config

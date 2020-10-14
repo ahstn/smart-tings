@@ -396,9 +396,6 @@ spec:
         persistentVolumeClaim:
           claimName: {{ if .Values.persistence.existingClaim }}{{ .Values.persistence.existingClaim }}{{- else }}{{ template "home-assistant.fullname" . }}{{- end }}
         {{- end }}
-      {{- else if .Values.configmap.enabled }}
-        configMap:
-          name: {{ .Values.configmap.name }}
       {{- else }}
         emptyDir: {}
       {{ end }}
